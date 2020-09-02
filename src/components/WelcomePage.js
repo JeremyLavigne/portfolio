@@ -7,7 +7,7 @@ const WelcomePage = () => {
         <div className="container has-text-centered">
             <div className="columns">
                 <div className="column">
-                    Welcome and thank you for coming here :)
+                    <p className="title">Welcome and thank you for coming here :)</p>
                 </div>
                 <div className="column">
                     <figure>
