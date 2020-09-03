@@ -6,7 +6,7 @@ import Home from './Home'
 import ChatBot from './ChatBot';
 
 
-// slide container - define position and global style
+// Slide container - define position and global style
 const Slide = ({ number, activeSlide }) => {
 
     let slidePosition
@@ -39,24 +39,16 @@ const Slide = ({ number, activeSlide }) => {
         left: slidePosition
     }
 
-    const boxStyle = {
-        minHeight: '85vh', 
-        marginTop: '2.5vh',
-        maxHeight: '85vh',
-        overflow: 'auto'
-    }
-
+    
     return (
 
         <div className="container" style={slideStyle}>
-            <div className="box has-background-warning" style={boxStyle}>
                 {number === 1 ?
                     <Home /> :
                     number === 2 ?
                         <ChatBot /> :
                         <Portfolio />
                 }
-            </div>
         </div>
 
     )

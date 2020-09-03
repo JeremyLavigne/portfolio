@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
 import 'bulma/css/bulma.css'
+import 'bulma-tooltip/dist/css/bulma-tooltip.min.css'
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

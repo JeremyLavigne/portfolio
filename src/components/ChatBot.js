@@ -1,13 +1,13 @@
 import React, { useState } from 'react'
 
 import AnswerLine from './AnswerLine'
-import { findByLabelText } from '@testing-library/react'
+
 
 const ChatBot = () => {
 
     const chatButton = require('../images/message.png')
 
-    const [chatIsOpen, setChatIsOpen] = useState(false)
+    const [chatIsOpen, setChatIsOpen] = useState(true)
     const [answerLines, setAnswerLines] = useState(["qg"])
 
     const openChat = () => {
@@ -18,24 +18,11 @@ const ChatBot = () => {
     }
 
 
-    const boxStyle = {
-        width: '60%',  // Use column and responsivness - dont use box 
-        maxHeight: '70vh',
-        marginTop: '2.5vh',
-        marginBottom: '2.5vh',
-        overflow: 'auto'
-    }
-    const blocStyle = {
-        minHeight: '80vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center'
-    }
-
     return (
+        <div className="box" style={boxStyle}>
         <div style={blocStyle}>
             {chatIsOpen ?
-                <div className="box has-background-link" style={boxStyle}>
+                <div className="box has-background-link" style={box2Style}>
                     <div className="navbar">
                         <div className="navbar-brand">
                             <p>Welcome</p>
@@ -62,7 +49,32 @@ const ChatBot = () => {
                 </div>
             }
         </div>
+        </div>
     )
+}
+
+const boxStyle = {
+    minHeight: '85vh', 
+    marginTop: '2.5vh',
+    maxHeight: '85vh',
+    overflow: 'auto',
+    backgroundImage: "url(" + require('../images/sunset.jpg') + ")",
+    backgroundPosition: 'center',
+    backgroundSize: 'cover',
+    backgroundRepeat: 'no-repeat'
+}
+const box2Style = {
+    width: '60%',  // Use column and responsivness - dont use box 
+    maxHeight: '70vh',
+    marginTop: '2.5vh',
+    marginBottom: '2.5vh',
+    overflow: 'auto'
+}
+const blocStyle = {
+    minHeight: '80vh',
+    display: 'flex',
+    justifyContent: 'center',
+    alignItems: 'center'
 }
 
 export default ChatBot

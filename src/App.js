@@ -8,22 +8,6 @@ import BottomButton from './components/BottomButton'
 const App = () => {
 
   const [activeSlide, setActiveSlide] = useState(1)
-  console.log(activeSlide)
-
-  const bodyStyle = {
-    height: '90vh',
-    backgroundColor: 'orange'
-  }
-  const bottomStyle = {
-    height: '10vh', 
-    minHeight: '50px',
-    position: 'fixed', 
-    bottom: 0, 
-    justifyContent: 'center', 
-    alignItems: 'center', 
-    zIndex: 3, 
-    width: '100%' 
-  } 
 
   return (
     <div>
@@ -55,5 +39,25 @@ const App = () => {
     </div>
   )
 }
+
+
+const bodyStyle = {
+  height: '90vh',
+  backgroundImage: "url(" + require('./images/water.jpg') + ")",
+  backgroundPosition: 'center',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat'
+}
+
+const bottomStyle = {
+  height: '10vh', 
+  minHeight: '50px',
+  position: 'fixed', 
+  bottom: 0, 
+  justifyContent: 'center', 
+  alignItems: 'center', 
+  zIndex: 3, 
+  width: '100%' 
+} 
 
 export default App

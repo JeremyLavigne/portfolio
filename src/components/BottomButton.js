@@ -5,24 +5,20 @@ import React from 'react';
 
 const BottomButton = ({ number, activeSlide, setActiveSlide }) => {
 
-    let buttonBorder
+    let buttonClassName
 
     if (activeSlide === number) {
-        buttonBorder = [3, 'red']
+        buttonClassName = "button is-light is-outlined"
     } else {
-        buttonBorder = [1, 'black']
+        buttonClassName = "button is-light"
     }
 
-    const buttonStyle = {
-        borderWidth: buttonBorder[0],
-        borderColor: buttonBorder[1],
-    }
+// Could change button color when is-hovered
 
     return (
 
         <button 
-            className="button is-light" 
-            style={buttonStyle} 
+            className={buttonClassName} 
             onClick={() => setActiveSlide(number)} 
         > 
         {number === 1 ?
