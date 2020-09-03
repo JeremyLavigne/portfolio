@@ -65,7 +65,8 @@ const boxStyle = {
     backgroundImage: "url(" + require('../images/bibliotek.jpg') + ")",
     backgroundPosition: 'center',
     backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat'
+    backgroundRepeat: 'no-repeat',
+    borderRadius: '20px'
 }
 
 

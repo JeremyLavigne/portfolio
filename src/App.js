@@ -7,32 +7,33 @@ import BottomButton from './components/BottomButton'
 
 const App = () => {
 
-  const [activeSlide, setActiveSlide] = useState(1)
+  const [ activeSlide, setActiveSlide ] = useState(1)
+  const [ profileIsOpen, setProfileIsOpen ] = useState(false)
 
   return (
     <div>
       <div style={bodyStyle}>
 
-        <Slide number={1} activeSlide={activeSlide} />
+        <Slide number={1} activeSlide={activeSlide} profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen}/>
 
         <LeftRightButton position="left" activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
 
-        <Slide number={2} activeSlide={activeSlide} />
+        <Slide number={2} activeSlide={activeSlide} profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen} />
 
         <LeftRightButton position="right" activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
 
-        <Slide number={3} activeSlide={activeSlide} />
+        <Slide number={3} activeSlide={activeSlide} profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen} />
 
       </div>
 
       <div className="has-background-black is-centered is-flex" style={bottomStyle}>
 
         <div className="buttons has-addons" >
-          <BottomButton number={1} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+          <BottomButton number={1} activeSlide={activeSlide} setActiveSlide={setActiveSlide} setProfileIsOpen={setProfileIsOpen}/>
 
-          <BottomButton number={2} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+          <BottomButton number={2} activeSlide={activeSlide} setActiveSlide={setActiveSlide} setProfileIsOpen={setProfileIsOpen} />
 
-          <BottomButton number={3} activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+          <BottomButton number={3} activeSlide={activeSlide} setActiveSlide={setActiveSlide} setProfileIsOpen={setProfileIsOpen} />
         </div>
       </div>
 

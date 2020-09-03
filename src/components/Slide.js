@@ -7,7 +7,7 @@ import ChatBot from './ChatBot';
 
 
 // Slide container - define position and global style
-const Slide = ({ number, activeSlide }) => {
+const Slide = ({ number, activeSlide, profileIsOpen, setProfileIsOpen }) => {
 
     let slidePosition
 
@@ -44,7 +44,7 @@ const Slide = ({ number, activeSlide }) => {
 
         <div className="container" style={slideStyle}>
                 {number === 1 ?
-                    <Home /> :
+                    <Home profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen}/> :
                     number === 2 ?
                         <ChatBot /> :
                         <Portfolio />

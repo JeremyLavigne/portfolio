@@ -3,7 +3,7 @@ import React from 'react';
 
 // Bottom Button used to change the active slide
 
-const BottomButton = ({ number, activeSlide, setActiveSlide }) => {
+const BottomButton = ({ number, activeSlide, setActiveSlide, setProfileIsOpen }) => {
 
     let buttonClassName
 
@@ -13,13 +13,17 @@ const BottomButton = ({ number, activeSlide, setActiveSlide }) => {
         buttonClassName = "button is-light"
     }
 
+    const handleClickButton = () => {
+        setActiveSlide(number)
+        setProfileIsOpen(false)
+    }
 // Could change button color when is-hovered
 
     return (
 
         <button 
             className={buttonClassName} 
-            onClick={() => setActiveSlide(number)} 
+            onClick={handleClickButton} 
         > 
         {number === 1 ?
             "Home" :
