@@ -2,8 +2,7 @@ import React from 'react'
 
 const Portfolio = () => {
     return (
-        <div className="hero is-success is-fullheight-with-navbar mb-0" >
-            <div className="hero-body">
+
                 <div className="tile is-ancestor px-3 py-3">
                     <div className="tile is-vertical is-8">
                         <div className="tile">
@@ -52,8 +51,7 @@ const Portfolio = () => {
                         </article>
                     </div>
                 </div>
-            </div>
-        </div>
+ 
     )
   }
   

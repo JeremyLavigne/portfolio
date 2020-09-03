@@ -12,8 +12,7 @@ const Interview = () => {
     }
 
     return (
-        <div className="hero is-link is-fullheight-with-navbar mb-0" >
-            <div className="hero-body">
+
                 <div className="columns is-vcentered" style={{width: '100%'}}>
                     <div className="column">
                         <div style={{width: '60%', margin: 'auto'}}>
@@ -56,8 +55,7 @@ const Interview = () => {
                         }
                     </div>
                 </div>
-            </div>
-        </div>
+
     )
 }
 
