@@ -16,24 +16,24 @@ const Portfolio = () => {
                     <div className="tile">
                         <div className="tile is-parent">
 
-                            <ProjectTile title="Hangman, The game" skills={["React / Redux"]} />
+                            <ProjectTile title="Hangman, The game" skills={["React / Redux"]} color="link" />
 
                         </div>
 
                         <div className="tile is-parent">
 
-                            <ProjectTile title="Java App" skills={["Java", "OOP"]} />
+                            <ProjectTile title="Java App" skills={["Java", "OOP"]} color="success"  />
    
                         </div>
                     </div>
 
                     <div className="tile is-parent">
 
-                        <ProjectTile title="Version 1" skills={["March 2020", "Carefree..."]} />
+                        <ProjectTile title="Version 1" skills={["March 2020", "Carefree..."]}  color="link" />
 
-                        <ProjectTile title="Version 2" skills={["May 2020", "Full of Hope!"]} />
+                        <ProjectTile title="Version 2" skills={["May 2020", "Full of Hope!"]}  color="info" />
 
-                        <ProjectTile title="Version 3" skills={["October 2020", "Confident :)"]} />
+                        <ProjectTile title="Version 3" skills={["October 2020", "Confident :)"]}  color="success" />
 
                     </div>
                 </div>
@@ -55,7 +55,7 @@ const Portfolio = () => {
 
                     <div className="tile is-parent">
 
-                        <ProjectTile title="Some project" skills={["Some skill", "Some other skill"]} />
+                        <ProjectTile title="Some project" skills={["Some skill", "Some other skill"]} color="danger"  />
 
                     </div>
 

@@ -4,12 +4,12 @@ import React from 'react'
 // --------------------------------------------------------------------------------------
 // Project tile - overview, name and skills
 // --------------------------------------------------------------------------------------
-const ProjectTile = ({title, skills}) => {
+const ProjectTile = ({title, skills, color}) => {
 
     let overview = require('../images/hangman_overview.png')
 
     return (
-        <article className="tile is-child notification is-light px-1 py-1">
+        <article className={`tile is-child notification is-${color} px-3 py-3`}>
             <figure className="image">
                 <p className="image is-256x256" style={overviewStyle}>
                     <img src={overview} alt={title} />
