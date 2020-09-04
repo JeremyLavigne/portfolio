@@ -1,16 +1,24 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 
-import AnswerLine from './AnswerLine'
+import BotLine from './BotLine'
 
 
 const ChatBot = () => {
+
+    useEffect(() => {
+        scrollChatToBottom()
+    })
 
     const chatButton = require('../images/message.png')
     const chatbot = require('../images/chatbot.png')
     const send = require('../images/send.png')
 
     const [chatIsOpen, setChatIsOpen] = useState(true)
-    const [answerLines, setAnswerLines] = useState(["qg"])
+    const [userInput, setUserInput] = useState("")
+    const [lines, setLines] = useState([
+        {id: 1, whotalks: 'me', isUserInput: false, sayWhat: ['Hi! I am a bot and this guy code me to answer some questions you might ask yourself.', 'Feel free to try :)']},
+        {id: 2, whotalks: 'user', isUserInput: false, sayWhat: ['Start seriously', 'Start casually']}
+    ])
 
     const openChat = () => {
         setChatIsOpen(true)
@@ -19,6 +27,45 @@ const ChatBot = () => {
         setChatIsOpen(false)
     }
 
+    const handleChangeUserInput = (event) => {
+        console.log(event.key) // Check what is wrong here
+        if (event.key === 'Enter') {
+            handleClickSend()
+        }
+        setUserInput(event.currentTarget.value)
+    }
+
+    const handleClickSend = () => {
+        if (userInput === "") {
+            return
+        }
+        const newLines = [{
+            id: Math.floor(Math.random()*10000),
+            whotalks: 'user',
+            isUserInput: true,
+            sayWhat: userInput
+        },
+        {
+            id: Math.floor(Math.random()*10000),
+            whotalks: 'me',
+            isUserInput: false,
+            sayWhat: ['Sorry, I am not that smart, I can only answer pre-coded questions :(']
+        },
+        {
+            id: Math.floor(Math.random()*10000), 
+            whotalks: 'user', 
+            isUserInput: false, 
+            sayWhat: ['Start seriously', 'Start casually']
+        }]
+
+        setLines(lines.concat(newLines))
+        setUserInput("")
+    }
+
+    const scrollChatToBottom = () => {
+        const element = document.getElementById("chat-content")
+        element.scrollTo(0, element.scrollHeight)
+    }
 
     return (
         <div className="box" style={boxStyle}>
@@ -40,22 +87,29 @@ const ChatBot = () => {
 
                             </header>
 
-                            <div className="card-content">
-                                <div className="content">
+                            <div id="chat-content" className="card-content" style={{maxHeight: '50vh',overflow: 'scroll'}}>
                                     {
-                                        answerLines.map(line => <AnswerLine key={line} />)
+                                        lines.map(line => <BotLine key={line.id} line={line} lines={lines} setLines={setLines} />)
                                     }
-                                </div>
                             </div>
 
-                            <footer className="card-footer has-background-link-light py-3 mt-5" style={{borderRadius: '0 0 15px 15px'}}>
+                            <footer className="card-footer has-background-link-light py-3" style={{borderRadius: '0 0 15px 15px'}}>
 
                                 <div className="is-flex" style={{width: '100%', justifyContent: 'space-between', borderRadius:"0 0 15px 15px"}}>
                                     <div className="control">
-                                        <input className="input is-rounded is-small mx-3" type="text" placeholder="..."/>
+                                        <input 
+                                            className="input is-rounded is-small mx-3" 
+                                            type="text" 
+                                            placeholder="..."
+                                            value={userInput}
+                                            onChange={handleChangeUserInput}
+                                        />
                                     </div>
 
-                                    <figure className="image is-32x32 mx-3" >
+                                    <figure 
+                                        className="image is-32x32 mx-3" 
+                                        onClick={handleClickSend}
+                                    >
                                         <img className="" src={send} alt="send"/>
                                     </figure>
                                 </div>

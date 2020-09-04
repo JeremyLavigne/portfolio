@@ -48,7 +48,7 @@ const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
                     <footer className="modal-card-foot" style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
                         <figcaption className="is-size-7 mr-2">Get My Resume</figcaption>
                         <figure className="image is-32x32" style={{cursor: 'pointer'}} >
-                            <a href="" download>
+                            <a href='../images/resume-lavigne.pdf' download>
                                 <img className="is-rounded" src={download} alt="download"/>
                             </a>
                         </figure>

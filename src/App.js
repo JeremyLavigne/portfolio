@@ -44,6 +44,7 @@ const App = () => {
 
 const bodyStyle = {
   height: '90vh',
+  minHeight: '90vh',
   backgroundImage: "url(" + require('./images/water.jpg') + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
