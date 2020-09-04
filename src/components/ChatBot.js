@@ -14,7 +14,7 @@ const ChatBot = () => {
     })
 
 
-    const [chatIsOpen, setChatIsOpen] = useState(true)
+    const [chatIsOpen, setChatIsOpen] = useState(false)
     const [userInput, setUserInput] = useState("")
     // Start messages
     const [lines, setLines] = useState([

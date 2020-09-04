@@ -2,14 +2,16 @@ import React, { useState } from 'react'
 
 
 // --------------------------------------------------------------------------------------
-// One Line of chat bot - need to work on it (one render and not three)
+// One Line of chat bot - Three renders regarding who 'talks'
 // --------------------------------------------------------------------------------------
 const BotLine = ({ line, lines, setLines }) => {
 
-
+    // Disabled all choices proposed when one is picked
     const [buttonsAreDisable, setButtonsAreDisabled] = useState(false)
-    const handleClickButton = () => {
 
+    const handleClickQuestion = () => {
+
+        // Fake answer waiting for data
         const newLines = [{
             id: Math.floor(Math.random()*10000),
             whotalks: 'me',
@@ -18,9 +20,11 @@ const BotLine = ({ line, lines, setLines }) => {
         }]
 
         setLines(lines.concat(newLines))
-        setButtonsAreDisabled(true) // prevent several click
+        setButtonsAreDisabled(true) // prevent several clicks
     }
 
+// --------------------------------------------------------------------------------------
+    // Bot is speaking : left, green, paragraph
     if (line.whotalks === 'me') {
         return (
             <div className="columns">
@@ -36,6 +40,7 @@ const BotLine = ({ line, lines, setLines }) => {
             </div>
         )
     } else {
+        // User is sending somethig : right, no style
         if (line.isUserInput) {
             return (
                 <div className="columns">
@@ -45,6 +50,7 @@ const BotLine = ({ line, lines, setLines }) => {
                 </div>
             )
         } else {    
+            // User pre-coded choices : button, right, blue
             return (
                 <div className="columns">
                     <div className="column is-8 is-offset-4 has-text-right my-2">
@@ -53,7 +59,7 @@ const BotLine = ({ line, lines, setLines }) => {
                                 <button 
                                     key={say} 
                                     className="button is-small is-outlined is-link is-rounded mx-1"
-                                    onClick={handleClickButton}
+                                    onClick={handleClickQuestion}
                                     disabled={buttonsAreDisable ? "disabled" : null}
                                 >
                                     {say}

@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 
 import Slide from './components/Slide'
-import LeftRightButton from './components/LeftRightButton'
 
 
 // --------------------------------------------------------------------------------------
@@ -19,21 +18,39 @@ const App = () => {
     setProfileIsOpen(false) // Avoid a profile still open when changing slide
   }
 
+
   return (
     <div>
       <div style={bodyStyle}>
 
         <Slide number={1} activeSlide={activeSlide} profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen} />
 
-        <LeftRightButton position="left" activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+        <div className="container has-text-centered" style={!(activeSlide === 1) ? leftbuttonStyle : { display: 'none' }}>
+          <span
+            className="icon"
+            style={{ cursor: 'pointer' }}
+            onClick={() => setActiveSlide(activeSlide - 1)}
+          >
+            <i className="fas fa-chevron-circle-left fa-lg"></i> :
+            </span>
+        </div>
 
         <Slide number={2} activeSlide={activeSlide} />
 
-        <LeftRightButton position="right" activeSlide={activeSlide} setActiveSlide={setActiveSlide} />
+        <div className="container has-text-centered" style={!(activeSlide === 3) ? rightbuttonStyle : { display: 'none' }}>
+          <span
+            className="icon"
+            style={{ cursor: 'pointer' }}
+            onClick={() => setActiveSlide(activeSlide + 1)}
+          >
+            <i className="fas fa-chevron-circle-right fa-lg"></i> :
+            </span>
+        </div>
 
         <Slide number={3} activeSlide={activeSlide} />
 
       </div>
+
 
       <div className="has-background-black is-centered is-flex" style={bottomStyle}>
 
@@ -44,7 +61,7 @@ const App = () => {
           > Home </button>
 
           <button
-            className={`button is-light ${activeSlide === 2 ? " is-outlined" : "" }`}
+            className={`button is-light ${activeSlide === 2 ? " is-outlined" : ""}`}
             onClick={() => handleClickBottomButton(2)}
           > Interview </button>
 
@@ -76,9 +93,25 @@ const bottomStyle = {
   minHeight: '50px',
   position: 'fixed',
   bottom: 0,
-  justifyContent: 'center', // For buttons
+  justifyContent: 'center', // For buttons position
   alignItems: 'center',
   zIndex: 3 // Prevent some overflow
+}
+
+// Left and right Arrow to change slide
+const leftbuttonStyle = {
+  width: '7.5%',
+  position: 'absolute',
+  left: '0%',
+  zIndex: 1, // Go under slide when changing
+  top: '45%' // Put it in the 'middle' of screen height
+}
+const rightbuttonStyle = {
+  width: '7.5%',
+  position: 'absolute',
+  left: '92.5%',
+  zIndex: 1, // Go under slide when changing
+  top: '45%' // Put it in the 'middle' of screen height
 }
 
 export default App
