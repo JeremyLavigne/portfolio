@@ -1,6 +1,9 @@
 import React, { useState } from 'react'
 
 
+// --------------------------------------------------------------------------------------
+// One Line of chat bot - need to work on it (one render and not three)
+// --------------------------------------------------------------------------------------
 const BotLine = ({ line, lines, setLines }) => {
 
 

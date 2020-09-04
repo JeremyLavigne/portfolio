@@ -1,10 +1,13 @@
 import React from 'react'
 
 
+// --------------------------------------------------------------------------------------
+// Profile - Modal opening when clicking on Photo in Home page
+// --------------------------------------------------------------------------------------
 const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
 
-    const photo = require('../images/photo.png')
-    const download = require('../images/download.png')
+    const photo = require('../images/photo.png') 
+
 
     return (
         <div className={profileIsOpen ? "modal is-active" : "modal"}>
@@ -20,7 +23,7 @@ const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
                             <img className="is-rounded" src={photo} alt="profil"/>
                         </figure>
 
-                        <p className="modal-card-title">Jeremy Lavigne</p>
+                        <p className="modal-card-title">Jérémy Lavigne</p>
 
                         <button 
                             className="delete" 
@@ -45,13 +48,20 @@ const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
                         </div>
                     </section>
 
-                    <footer className="modal-card-foot" style={{width: '100%', display: 'flex', justifyContent: 'flex-end'}}>
-                        <figcaption className="is-size-7 mr-2">Get My Resume</figcaption>
-                        <figure className="image is-32x32" style={{cursor: 'pointer'}} >
-                            <a href='../images/resume-lavigne.pdf' download>
-                                <img className="is-rounded" src={download} alt="download"/>
-                            </a>
-                        </figure>
+                    <footer className="modal-card-foot">
+                        <div className="container has-text-right">
+
+                                <p>Get My Resume -
+
+                                <span className="icon">
+                                    <a href='../images/resume-lavigne.pdf' download>
+                                        <i className="fas fa-file-download"></i>
+                                    </a>
+                                </span>
+
+                                </p>
+
+                        </div>
                     </footer>
 
                 </div>

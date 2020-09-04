@@ -1,5 +1,9 @@
 import React from 'react'
 
+
+// --------------------------------------------------------------------------------------
+// Portfolio slide - Need to work on it
+// --------------------------------------------------------------------------------------
 const Portfolio = () => {
 
 
@@ -57,6 +61,8 @@ const Portfolio = () => {
     )
 }
 
+// Content is not supposed to get out of the slide
+// Body height : 90vh - slide height : 85vh
 const boxStyle = {
     minHeight: '85vh',
     marginTop: '2.5vh',

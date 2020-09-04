@@ -1,8 +1,9 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './App';
-import 'bulma/css/bulma.css'
-import 'bulma-tooltip/dist/css/bulma-tooltip.min.css'
+import 'bulma/css/bulma.css' // Bulma css
+import 'bulma-tooltip/dist/css/bulma-tooltip.min.css' // Bulma Tooltip
+import '@fortawesome/fontawesome-free/css/all.css' // Font awesome icons
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(

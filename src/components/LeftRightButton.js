@@ -1,31 +1,25 @@
 import React from 'react';
 
 
-// Left and Right Button used to change the active slide
-
+// --------------------------------------------------------------------------------------
+// Left and Right arrows buttons used to change slide
+// --------------------------------------------------------------------------------------
 const LeftRightButton = ({ position, activeSlide, setActiveSlide }) => {
 
-    const next = require('../images/next.png')
-    const back = require('../images/back.png')
-
-
     let buttonPosition
-    let activeButton
+    let activeButton  // Left button inactive when no left slide. Same for right
     let targetSlide
-    let goodArrow
 
     switch (position) {
         case "left":
             buttonPosition = '0%'
             activeButton = !(activeSlide === 1)
             targetSlide = activeSlide - 1
-            goodArrow = back
             break
         case "right":
             buttonPosition = '92.5%'
             activeButton = !(activeSlide === 3)
             targetSlide = activeSlide + 1
-            goodArrow = next
             break
         default:
             break
@@ -34,22 +28,27 @@ const LeftRightButton = ({ position, activeSlide, setActiveSlide }) => {
     const buttonStyle = {
         width: '7.5%',
         position: 'absolute',
-        zIndex: 1,
+        zIndex: 1, // Go under slide when changing
         left : buttonPosition,
-        top : '45%'
+        top : '45%' // Put it in the 'middle' of screen height
     }
 
     return (
 
         <div className="container has-text-centered" style={activeButton ? buttonStyle : {display: 'none'}}>
 
-                <img 
-                    src={goodArrow} 
-                    alt="arrow" 
-                    onClick={() => setActiveSlide(targetSlide)}
-                    style={{cursor: 'pointer'}}
-                />
+            <span 
+                className="icon"
+                style={{cursor: 'pointer'}}
+                onClick={() => setActiveSlide(targetSlide)}
+            >
+                {
+                    position === 'left' ? 
+                        <i className="fas fa-chevron-circle-left fa-lg"></i> :
+                        <i className="fas fa-chevron-circle-right fa-lg"></i>
+                }
                 
+            </span>
         </div>
 
     )
