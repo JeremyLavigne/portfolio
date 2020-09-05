@@ -1,12 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import ProjectTile from './ProjectTile'
+import NavTile from './NavTile'
 
 
 // --------------------------------------------------------------------------------------
 // Portfolio slide - Need to work on it
 // --------------------------------------------------------------------------------------
 const Portfolio = () => {
+
+    const [ openedProjects, setOpenedProjects ] = useState([
+        {name: "hangman", open: false},
+        {name: "javaApp", open: false},
+        {name: "versions", open: false},
+        {name: "other", open: false}
+    ])
 
     return (
         <div className="box" style={boxStyle}>
@@ -16,46 +24,81 @@ const Portfolio = () => {
                     <div className="tile">
                         <div className="tile is-parent">
 
-                            <ProjectTile title="Hangman, The game" skills={["React / Redux"]} color="link" />
+                            <ProjectTile 
+                                title="Hangman, The game" 
+                                skills={["React / Redux", "Basic JSON Server"]} 
+                                color="link" 
+                                openedProjects={openedProjects}
+                                setOpenedProjects={setOpenedProjects}
+                                index={0}
+                            />
 
                         </div>
 
                         <div className="tile is-parent">
 
-                            <ProjectTile title="Java App" skills={["Java", "OOP"]} color="success"  />
-   
+                            <ProjectTile 
+                                title="Java App" 
+                                skills={["Java", "OOP"]} 
+                                color="success" 
+                                openedProjects={openedProjects}
+                                setOpenedProjects={setOpenedProjects}
+                                index={1}
+                            />
+
                         </div>
                     </div>
 
                     <div className="tile is-parent">
 
-                        <ProjectTile title="Version 1" skills={["March 2020", "Carefree..."]}  color="link" />
+                        <ProjectTile 
+                            title="Version 1" 
+                            skills={["March 2020", "Carefree..."]} 
+                            color="link" 
+                            openedProjects={openedProjects}
+                            setOpenedProjects={setOpenedProjects}
+                            index={2}
+                        />
 
-                        <ProjectTile title="Version 2" skills={["May 2020", "Full of Hope!"]}  color="info" />
+                        <ProjectTile 
+                            title="Version 2" 
+                            skills={["May 2020", "Full of Hope!"]} 
+                            color="info" 
+                            openedProjects={openedProjects}
+                            setOpenedProjects={setOpenedProjects}
+                            index={2}
+                        />
 
-                        <ProjectTile title="Version 3" skills={["October 2020", "Confident :)"]}  color="success" />
+                        <ProjectTile 
+                            title="Version 3" 
+                            skills={["October 2020", "Confident :)"]} 
+                            color="success" 
+                            openedProjects={openedProjects}
+                            setOpenedProjects={setOpenedProjects}
+                            index={2}
+                        />
 
                     </div>
                 </div>
 
-                <div className="tile is-vertical is-3">
+                <div className="tile is-vertical is-4">
 
-                    <div className="tile is-parent">
+                    <div className="tile is-parent" style={{maxHeight: '200px'}}>
 
-                        <article className="tile is-child notification is-warning">
-                            <div className="content">
-                                <p className="title">Portfolio</p>
-                                <div className="content">
-                                    List of projects
-                                    </div>
-                            </div>
-                        </article>
+                        <NavTile openedProjects={openedProjects} setOpenedProjects={setOpenedProjects}/>
 
                     </div>
 
                     <div className="tile is-parent">
 
-                        <ProjectTile title="Some project" skills={["Some skill", "Some other skill"]} color="danger"  />
+                        <ProjectTile 
+                            title="Some project" 
+                            skills={["Some skill", "Some other skill"]} 
+                            color="danger" 
+                            openedProjects={openedProjects}
+                            setOpenedProjects={setOpenedProjects}
+                            index={3}
+                        />
 
                     </div>
 
