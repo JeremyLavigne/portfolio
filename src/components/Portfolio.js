@@ -9,6 +9,13 @@ import NavTile from './NavTile'
 // --------------------------------------------------------------------------------------
 const Portfolio = () => {
 
+    const hangmanImage = require('../images/hangman_overview.png')
+    const javaAppImage = require('../images/java-app.png')
+    const otherProjectImage = require('../images/other.png')
+    const v1Image = require('../images/version-1.png')
+    const v2Image = require('../images/version-2.png')
+    const v3Image = require('../images/version-3.png')
+
     const [ openedProjects, setOpenedProjects ] = useState([
         {name: "hangman", open: false},
         {name: "javaApp", open: false},
@@ -26,7 +33,9 @@ const Portfolio = () => {
 
                             <ProjectTile 
                                 title="Hangman, The game" 
+                                overview={hangmanImage}
                                 skills={["React / Redux", "Basic JSON Server"]} 
+                                link="https://arcane-escarpment-51046.herokuapp.com"
                                 color="link" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}
@@ -39,7 +48,9 @@ const Portfolio = () => {
 
                             <ProjectTile 
                                 title="Java App" 
+                                overview={javaAppImage}
                                 skills={["Java", "OOP"]} 
+                                link=""
                                 color="success" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}
@@ -53,8 +64,10 @@ const Portfolio = () => {
 
                         <ProjectTile 
                             title="Version 1" 
+                            overview={v1Image}
                             skills={["March 2020", "Carefree..."]} 
-                            color="link" 
+                            link=""
+                            color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}
                             index={2}
@@ -62,17 +75,21 @@ const Portfolio = () => {
 
                         <ProjectTile 
                             title="Version 2" 
+                            overview={v2Image}
                             skills={["May 2020", "Full of Hope!"]} 
-                            color="info" 
+                            link="https://www.jeremylavigneapply.com"
+                            color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}
                             index={2}
                         />
 
                         <ProjectTile 
-                            title="Version 3" 
+                            title="Version 3"
+                            overview={v3Image} 
                             skills={["October 2020", "Confident :)"]} 
-                            color="success" 
+                            link=""
+                            color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}
                             index={2}
@@ -93,7 +110,9 @@ const Portfolio = () => {
 
                         <ProjectTile 
                             title="Some project" 
+                            overview={otherProjectImage}
                             skills={["Some skill", "Some other skill"]} 
+                            link=""
                             color="danger" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}

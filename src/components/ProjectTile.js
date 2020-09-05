@@ -4,13 +4,11 @@ import useWindowWidth from '../utils/windowDimensions'
 // --------------------------------------------------------------------------------------
 // Project tile - overview, name and skills
 // --------------------------------------------------------------------------------------
-const ProjectTile = ({title, skills, color, openedProjects, setOpenedProjects, index}) => {
-
-    let overview = require('../images/hangman_overview.png')
+const ProjectTile = ({overview, title, skills, link, color, openedProjects, setOpenedProjects, index}) => {
 
     const isMobile = useWindowWidth();
 
-    // Project are alwaya opened on mobile - UI easier like that
+    // Project are always opened on mobile - UI easier like that
     let isOpen
     if (isMobile) { isOpen = true} else {
     isOpen = openedProjects[index].open }
@@ -25,14 +23,20 @@ const ProjectTile = ({title, skills, color, openedProjects, setOpenedProjects, i
 
     return (
         <article 
-            className={`tile is-child notification is-${color} px-2 py-2`}
+            className={`tile is-child notification is-${color} is-light px-2 py-2`}
             style={isOpen ? {visibility: 'visible'} : {visibility: 'hidden'}}
         >
     
             <p className="subtitle is-italic is-strong">{title}</p>
 
             <figure className="image is-256x256">
-                    <img src={overview} alt={title} style={overviewStyle} />
+                <a href={link} target="_blank" rel="noopener noreferrer">
+                    <img 
+                        src={overview} 
+                        alt={title} 
+                        style={overviewStyle}
+                    />
+                </a>
             </figure>
 
             <ul className="content my-1 px-2">

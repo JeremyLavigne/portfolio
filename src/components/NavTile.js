@@ -23,14 +23,14 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                     <div className="columns">
                         <div className="column is-half">
                             <button 
-                                className="button is-link"
+                                className="button is-link is-light"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(0)}
                             ></button>
                         </div>
                         <div className="column is-half">
                             <button 
-                                className="button is-success"
+                                className="button is-success is-light"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(1)}
                             ></button>
@@ -38,7 +38,7 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                     </div>
                     <div className="content">
                         <button 
-                            className="button is-link"
+                            className="button is-warning is-light"
                             style={{width: '100%'}}
                             onClick={() => handleClickOpenProject(2)}
                         ></button>
@@ -48,7 +48,7 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                     <div></div>
                     <div >
                         <button 
-                            className="button is-danger"
+                            className="button is-danger is-light"
                             style={{width: '100%'}}
                             onClick={() => handleClickOpenProject(3)}
                         ></button>
