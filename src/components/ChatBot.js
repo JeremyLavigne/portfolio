@@ -16,10 +16,15 @@ const ChatBot = () => {
 
     const [chatIsOpen, setChatIsOpen] = useState(false)
     const [userInput, setUserInput] = useState("")
-    // Start messages
+
+    // Several step/ group inside 'interview', see utils/chatContent.js
+    const [ activeGroup, setActiveGroup] = useState(0)
+    const [ chatContent, setChatContent] = useState(require('../utils/chatContent').default)
+
+    // All chatBot lines
     const [lines, setLines] = useState([
-        { id: 1, whotalks: 'me', isUserInput: false, sayWhat: ['Hi! I am a bot and this guy code me to answer some questions you might ask yourself.', 'Feel free to try :)'] },
-        { id: 2, whotalks: 'user', isUserInput: false, sayWhat: ['Start seriously', 'Start casually'] }
+        { id: 1, align: 'left', content: "Hi! I code this bot to answer some questions you might ask yourself. Feel free to try :)"},
+        { id: 2, align: 'right', content: chatContent.[activeGroup] ? chatContent.[activeGroup].buttons : [""]}
     ])
 
 
@@ -48,16 +53,15 @@ const ChatBot = () => {
         if (userInput === "") { return }
 
         const newLines = [
-            { id: generateID(), whotalks: 'user', isUserInput: true, sayWhat: userInput },
-            { id: generateID(), whotalks: 'me', isUserInput: false, sayWhat: ['Sorry, I am not that smart, I can only answer pre-coded questions :('] },
-            { id: generateID(), whotalks: 'user', isUserInput: false, sayWhat: ['Start seriously', 'Start casually'] }
+            { id: generateID(), align: 'right', content: userInput, isUserInput: true },
+            { id: generateID(), align: 'left', content: "Sorry, I am not that smart, I can only answer pre-coded questions :(" },
         ]
 
         setLines(lines.concat(newLines))
         setUserInput("")
     }
 
-
+ 
     // --------------------------------------------------------------------------------------
     return (
         <div className="box" style={boxStyle}>
@@ -82,7 +86,17 @@ const ChatBot = () => {
 
                             <div id="chat-content" className="card-content" style={messagesStyle}>
                                 {
-                                    lines.map(line => <BotLine key={line.id} line={line} lines={lines} setLines={setLines} />)
+                                    lines.map(line => 
+                                        <BotLine 
+                                            key={line.id} 
+                                            line={line} 
+                                            lines={lines} 
+                                            setLines={setLines} 
+                                            activeGroup={activeGroup}
+                                            setActiveGroup={setActiveGroup}
+                                            chatContent={chatContent}
+                                            setChatContent={setChatContent}
+                                        />)
                                 }
                             </div>
 
@@ -94,6 +108,7 @@ const ChatBot = () => {
                                             className="input is-rounded is-small mx-3"
                                             type="text"
                                             placeholder="..."
+                                            maxLength={30}
                                             value={userInput}
                                             onKeyPress={handleEnterPress}
                                             onChange={(event) => setUserInput(event.currentTarget.value)}

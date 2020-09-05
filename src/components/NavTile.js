@@ -26,14 +26,18 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                                 className="button is-link is-light"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(0)}
-                            ></button>
+                            >
+                                <i className="fab fa-react"></i>
+                            </button>
                         </div>
                         <div className="column is-half">
                             <button 
                                 className="button is-success is-light"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(1)}
-                            ></button>
+                            >
+                                <i className="fab fa-java"></i>
+                            </button>
                         </div>
                     </div>
                     <div className="content">
@@ -41,7 +45,11 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                             className="button is-warning is-light"
                             style={{width: '100%'}}
                             onClick={() => handleClickOpenProject(2)}
-                        ></button>
+                        >
+                            <i className="fas fa-step-forward"></i>
+                            <i className="fas fa-step-forward"></i>
+                            <i className="fas fa-step-forward"></i>
+                        </button>
                     </div>
                 </div>
                 <div className="column is-4 is-flex" style={{flexDirection: 'column', justifyContent: 'space-between'}}>
@@ -51,7 +59,9 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                             className="button is-danger is-light"
                             style={{width: '100%'}}
                             onClick={() => handleClickOpenProject(3)}
-                        ></button>
+                        >
+                            <i className="fas fa-question"></i>
+                        </button>
                     </div>
                 </div>
             </div>

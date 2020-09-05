@@ -1,4 +1,4 @@
-export default chatContent = [
+const chatContent = [
     {
         group: 0,
         buttons: [
@@ -63,3 +63,5 @@ export default chatContent = [
         ]
     }
 ]
+
+export default chatContent

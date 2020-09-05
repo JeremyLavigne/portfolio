@@ -59,14 +59,14 @@ const Portfolio = () => {
 
                         </div>
                     </div>
-
+                   
                     <div className="tile is-parent">
 
                         <ProjectTile 
                             title="Version 1" 
                             overview={v1Image}
                             skills={["March 2020", "Carefree..."]} 
-                            link=""
+                            link="https://www.jeremylavigneapply.com/version-1/indexv1.html"
                             color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}
@@ -88,7 +88,7 @@ const Portfolio = () => {
                             title="Version 3"
                             overview={v3Image} 
                             skills={["October 2020", "Confident :)"]} 
-                            link=""
+                            link="/"
                             color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}
