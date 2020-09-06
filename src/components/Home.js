@@ -12,6 +12,7 @@ const Home = ({profileIsOpen, setProfileIsOpen}) => {
     const photo = require('../images/photo.png')
 
 
+    // --------------------------------------------------------------------------------------
     return (
         <div className="box" style={boxStyle}>
             <div className="container">

@@ -9,6 +9,7 @@ import NavTile from './NavTile'
 // --------------------------------------------------------------------------------------
 const Portfolio = () => {
 
+    // Projects overviews images
     const hangmanImage = require('../images/hangman_overview.png')
     const javaAppImage = require('../images/java-app.png')
     const otherProjectImage = require('../images/other.png')
@@ -16,6 +17,7 @@ const Portfolio = () => {
     const v2Image = require('../images/version-2.png')
     const v3Image = require('../images/version-3.png')
 
+    // Projects are closed by default, give user some space (except in mobile)
     const [ openedProjects, setOpenedProjects ] = useState([
         {name: "hangman", open: false},
         {name: "javaApp", open: false},

@@ -24,7 +24,7 @@ const ChatBot = () => {
     // All chatBot lines
     const [lines, setLines] = useState([
         { id: 1, align: 'left', content: "Hi! I code this bot to answer some questions you might ask yourself. Feel free to try :)"},
-        { id: 2, align: 'right', content: chatContent.[activeGroup] ? chatContent.[activeGroup].buttons : [""]}
+        { id: 2, align: 'right', content: chatContent[activeGroup] ? chatContent[activeGroup].buttons : [""]}
     ])
 
 
@@ -54,7 +54,8 @@ const ChatBot = () => {
 
         const newLines = [
             { id: generateID(), align: 'right', content: userInput, isUserInput: true },
-            { id: generateID(), align: 'left', content: "Sorry, I am not that smart, I can only answer pre-coded questions :(" },
+            { id: generateID(), align: 'left', content: "Sorry, I am not that smart, bot can only answer pre-coded questions :(" },
+            { id: generateID(), align: 'right', content: chatContent[activeGroup].buttons },
         ]
 
         setLines(lines.concat(newLines))
@@ -182,8 +183,7 @@ const messagesStyle = {
 
 const footerStyle = { 
     width: '100%', 
-    justifyContent: 
-    'space-between', 
+    justifyContent: 'space-between', 
     borderRadius: "0 0 15px 15px" 
 }
 

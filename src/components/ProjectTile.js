@@ -44,12 +44,13 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
                     skills.map(skill => <li key={skill}> -- {skill}</li>)
                 }
             </ul>
-
+            { !isMobile &&
             <button 
                 className="delete" 
                 aria-label="close"
                 onClick={() => handleClickCloseProject(index)}
             ></button>
+            }
         </article>
     )
 }

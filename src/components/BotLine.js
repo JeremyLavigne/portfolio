@@ -6,6 +6,9 @@ import React from 'react'
 // --------------------------------------------------------------------------------------
 const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatContent, setChatContent }) => {
 
+
+    // --------------------------------------------------------------------------------------
+
     const disabledButtons = (groupNumber) => {
         const newChatContent = [...chatContent]
         const buttons = newChatContent[groupNumber].buttons
@@ -14,6 +17,7 @@ const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatConte
         }
         setChatContent(newChatContent)
     }
+
     const disabledOneButton = (groupNumber, index) => {
         const newChatContent = [...chatContent]
         
@@ -22,6 +26,42 @@ const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatConte
         setChatContent(newChatContent)
     }
 
+    // Could be more 'optimized', should think about a better solution
+    // Doesn´t prevent double click or click on an other button in the same time
+    const displayAnswer = (content1, content2) => {
+        // Show '.....'
+        let newLines = [{
+            id: Math.floor(Math.random()*10000),
+            align: 'left',
+            content: "..."
+            }]
+        setLines(lines.concat(newLines))
+
+        // Then show fisrt answer
+        setTimeout(() => {
+        newLines = [{
+            id: Math.floor(Math.random()*10000),
+            align: 'left',
+            content: content1
+            }]
+            setLines(lines.concat(newLines))
+        }, 500)
+
+        // Finally, complete answer
+        setTimeout(() => {
+            newLines = [{
+                id: Math.floor(Math.random()*10000),
+                align: 'left',
+                content: content1
+                },{
+                id: Math.floor(Math.random()*10000),
+                align: 'right',
+                content: content2 
+            }]
+            setLines(lines.concat(newLines))
+        }, 1000)
+    }
+    
     // --------------------------------------------------------------------------------------
     const handleClickQuestion = (text, index) => {
 
@@ -29,20 +69,9 @@ const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatConte
         if (text === "Start Casually") {
 
             disabledButtons(0)
-            setActiveGroup(1) // Not take immediatly
+            setActiveGroup(1) // Not took immediatly
 
-            const newLines = [{
-                id: Math.floor(Math.random()*10000),
-                align: 'left',
-                content: "Great, let's go!"
-            },
-            {
-                id: Math.floor(Math.random()*10000),
-                align: 'right',
-                content: chatContent[1].buttons 
-            }]
-    
-            setLines(lines.concat(newLines))
+            displayAnswer("Great, let´s go!", chatContent[1].buttons)
             return
         }
         // Serious = directly to next step
@@ -51,18 +80,8 @@ const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatConte
             disabledButtons(0)
             setActiveGroup(2)
 
-            const newLines = [{
-                id: Math.floor(Math.random()*10000),
-                align: 'left',
-                content: "Sure, let's begin."
-            },
-            {
-                id: Math.floor(Math.random()*10000),
-                align: 'right',
-                content: chatContent[2].buttons 
-            }]
+            displayAnswer("Sure, let's begin.", chatContent[2].buttons)
 
-            setLines(lines.concat(newLines))
             return
         }
 
@@ -90,36 +109,14 @@ const BotLine = ({ line, lines, setLines, activeGroup, setActiveGroup, chatConte
             disabledButtons(activeGroup)
             setActiveGroup(activeGroup+1)
 
-            const newLines = [{
-                id: Math.floor(Math.random()*10000),
-                align: 'left',
-                content: "Moving on!"
-            },
-            {
-                id: Math.floor(Math.random()*10000),
-                align: 'right',
-                content: chatContent[activeGroup+1].buttons 
-            }]
-
-            setLines(lines.concat(newLines))
+            displayAnswer("Moving on!", chatContent[activeGroup+1].buttons)
             return
         }
 
 
         // Usual way - disabled only pressed button
         disabledOneButton(activeGroup, index)
-        const newLines = [{
-            id: Math.floor(Math.random()*10000),
-            align: 'left',
-            content: chatContent[activeGroup].answers[index]
-        },
-        {
-            id: Math.floor(Math.random()*10000),
-            align: 'right',
-            content: chatContent[activeGroup].buttons 
-        }]
-
-        setLines(lines.concat(newLines))
+        displayAnswer(chatContent[activeGroup].answers[index], chatContent[activeGroup].buttons )
     }
  
 

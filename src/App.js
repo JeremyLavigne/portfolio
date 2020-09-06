@@ -83,7 +83,7 @@ const bodyStyle = {
   backgroundImage: "url(" + require('./images/water.jpg') + ")",
   backgroundPosition: 'center',
   backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat'
+  backgroundRepeat: 'no-repeat',
 }
 
 // Like a footer/Navbar, stay always in bottom and takes the remaining 10%

@@ -1,8 +1,9 @@
 import React from 'react'
 import useWindowWidth from '../utils/windowDimensions'
 
+
 // --------------------------------------------------------------------------------------
-// Nav tile - get access to other tiles
+// Nav tile - Top right corner tile giving access to other tiles
 // --------------------------------------------------------------------------------------
 const NavTile = ({openedProjects, setOpenedProjects}) => {
 
