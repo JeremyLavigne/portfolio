@@ -51,8 +51,8 @@ const Portfolio = () => {
                             <ProjectTile 
                                 title="Java App" 
                                 overview={javaAppImage}
-                                skills={["Java", "OOP"]} 
-                                link=""
+                                skills={["Java, OOP", ".jar file to download on click"]} 
+                                link="../documents/java-app.jar"
                                 color="success" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}
@@ -90,7 +90,7 @@ const Portfolio = () => {
                             title="Version 3"
                             overview={v3Image} 
                             skills={["October 2020", "Confident :)"]} 
-                            link="/"
+                            link="#"
                             color="warning" 
                             openedProjects={openedProjects}
                             setOpenedProjects={setOpenedProjects}

@@ -54,7 +54,7 @@ const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
                                 <p>Get My Resume -
 
                                 <span className="icon">
-                                    <a href='../images/resume-lavigne.pdf' download>
+                                    <a href='../documents/resume-lavigne.pdf' download>
                                         <i className="fas fa-file-download"></i>
                                     </a>
                                 </span>

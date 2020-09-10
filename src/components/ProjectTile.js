@@ -30,13 +30,22 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
             <p className="subtitle is-italic is-strong">{title}</p>
 
             <figure className="image is-256x256">
-                <a href={link} target="_blank" rel="noopener noreferrer">
-                    <img 
-                        src={overview} 
-                        alt={title} 
-                        style={overviewStyle}
-                    />
-                </a>
+                {title != "Java App" ? 
+                    <a href={link} target="_blank" rel="noopener noreferrer" >
+                        <img 
+                            src={overview} 
+                            alt={title} 
+                            style={overviewStyle}
+                        />
+                    </a> :
+                    <a href={link} download >
+                        <img 
+                            src={overview} 
+                            alt={title} 
+                            style={overviewStyle}
+                        />
+                    </a>
+                }
             </figure>
 
             <ul className="content my-1 px-2">
