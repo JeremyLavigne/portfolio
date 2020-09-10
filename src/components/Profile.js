@@ -54,7 +54,7 @@ const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
                                 <p>Get My Resume -
 
                                 <span className="icon">
-                                    <a href='../documents/resume-lavigne.pdf' download>
+                                    <a href={process.env.PUBLIC_URL + '/documents/resume-lavigne.pdf'} download>
                                         <i className="fas fa-file-download"></i>
                                     </a>
                                 </span>

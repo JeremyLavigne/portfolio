@@ -52,7 +52,7 @@ const Portfolio = () => {
                                 title="Java App" 
                                 overview={javaAppImage}
                                 skills={["Java, OOP", ".jar file to download on click"]} 
-                                link="../documents/java-app.jar"
+                                link="/documents/java-app.jar"
                                 color="success" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}

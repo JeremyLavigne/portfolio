@@ -30,15 +30,21 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
             <p className="subtitle is-italic is-strong">{title}</p>
 
             <figure className="image is-256x256">
-                {title != "Java App" ? 
-                    <a href={link} target="_blank" rel="noopener noreferrer" >
+                {title === "Java App" ? 
+                    <a href={process.env.PUBLIC_URL + link} download >
                         <img 
                             src={overview} 
                             alt={title} 
                             style={overviewStyle}
                         />
-                    </a> :
-                    <a href={link} download >
+                    </a> : title === "Some project" ?
+                    <img 
+                        src={overview} 
+                        alt={title} 
+                        style={overviewStyle}
+                    />
+                    :
+                    <a href={link} target="_blank" rel="noopener noreferrer"  >
                         <img 
                             src={overview} 
                             alt={title} 

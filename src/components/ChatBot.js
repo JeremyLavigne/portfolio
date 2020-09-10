@@ -55,7 +55,7 @@ const ChatBot = () => {
         const newLines = [
             { id: generateID(), align: 'right', content: userInput, isUserInput: true },
             { id: generateID(), align: 'left', content: "Sorry, I am not that smart, bot can only answer pre-coded questions :(" },
-            { id: generateID(), align: 'right', content: chatContent[activeGroup].buttons },
+            { id: generateID(), align: 'right', content: chatContent[activeGroup].buttons }
         ]
 
         setLines(lines.concat(newLines))
