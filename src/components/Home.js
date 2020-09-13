@@ -10,6 +10,7 @@ const Home = ({profileIsOpen, setProfileIsOpen}) => {
 
     const github = require('../images/github-image.png')
     const photo = require('../images/photo.png')
+    const linkedIn = require('../images/linkedin.png')
 
 
     // --------------------------------------------------------------------------------------
@@ -33,9 +34,15 @@ const Home = ({profileIsOpen, setProfileIsOpen}) => {
                             <img className="is-rounded" src={photo} alt="profil" style={{cursor: 'pointer'}}/>
                         </figure>
 
-                        <figure className="image is-64x64 has-tooltip-bottom has-tooltip-light" data-tooltip="See it on Github">
+                        <figure className="image is-64x64 has-tooltip-bottom has-tooltip-light" data-tooltip="See me on Github">
                             <a href="https://github.com/JeremyLavigne" target="_blank" rel="noopener noreferrer">
                                 <img className="is-rounded" src={github} alt="github"/>
+                            </a>
+                        </figure>
+
+                        <figure className="image is-64x64 has-tooltip-bottom has-tooltip-light" data-tooltip="See me on LinkedIn" style={{marginLeft : '10px'}}>
+                            <a href="https://www.linkedin.com/in/jérémy-lavigne-33577a177" target="_blank" rel="noopener noreferrer">
+                                <img className="is-rounded" src={linkedIn} alt="linkedIn"/>
                             </a>
                         </figure>
                     </div>

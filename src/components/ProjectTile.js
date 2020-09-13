@@ -37,6 +37,7 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
                             alt={title} 
                             style={overviewStyle}
                         />
+                        Download me
                     </a> : title === "Some project" ?
                     <img 
                         src={overview} 
@@ -50,7 +51,9 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
                             alt={title} 
                             style={overviewStyle}
                         />
+                        Visit me
                     </a>
+
                 }
             </figure>
 

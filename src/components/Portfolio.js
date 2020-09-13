@@ -51,7 +51,7 @@ const Portfolio = () => {
                             <ProjectTile 
                                 title="Java App" 
                                 overview={javaAppImage}
-                                skills={["Java, OOP", ".jar file to download on click"]} 
+                                skills={["Java, OOP"]} 
                                 link="/documents/java-app.jar"
                                 color="success" 
                                 openedProjects={openedProjects}
