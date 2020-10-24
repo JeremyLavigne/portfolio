@@ -1,23 +1,23 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cce730a428c9bf8575ccd15569b628ac",
+    "revision": "ca237f57f0a567f032c7fc90d7c7fb5f",
     "url": "/index.html"
   },
   {
-    "revision": "d7439c69e1acfbf0dcf0",
+    "revision": "838c1899ba2ce78c3cfe",
     "url": "/static/css/2.692107d7.chunk.css"
   },
   {
-    "revision": "d7439c69e1acfbf0dcf0",
-    "url": "/static/js/2.1c45392d.chunk.js"
+    "revision": "838c1899ba2ce78c3cfe",
+    "url": "/static/js/2.d8c09287.chunk.js"
   },
   {
     "revision": "e88a3e95b5364d46e95b35ae8c0dc27d",
-    "url": "/static/js/2.1c45392d.chunk.js.LICENSE.txt"
+    "url": "/static/js/2.d8c09287.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "701647740df00a7e2a63",
-    "url": "/static/js/main.67aa9c4d.chunk.js"
+    "revision": "fc494527e60dd6d7fdcc",
+    "url": "/static/js/main.be81a053.chunk.js"
   },
   {
     "revision": "4f2b1704eab49d50853b",
@@ -92,12 +92,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/hangman_overview.3a508399.png"
   },
   {
-    "revision": "d0e6def6524b7cf4f22242d3dda80fd1",
-    "url": "/static/media/java-app.d0e6def6.png"
-  },
-  {
-    "revision": "1a9c6d2b629241dee0b73124992fbbf1",
-    "url": "/static/media/other.1a9c6d2b.png"
+    "revision": "5626dcae92953dd10a9167335db900b5",
+    "url": "/static/media/java-app.5626dcae.png"
   },
   {
     "revision": "6ec44562a8412a54ece1ed9c5731706b",
@@ -112,16 +108,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/static/media/sunset.21565da7.jpg"
   },
   {
+    "revision": "e1c98e9f57f87a078f98fc7507ec44d2",
+    "url": "/static/media/tiny-games.e1c98e9f.png"
+  },
+  {
     "revision": "8ed2ace7b2499646d82da5a9f196889e",
     "url": "/static/media/version-1.8ed2ace7.png"
   },
   {
     "revision": "8b72fee15ab7f658d896c83bc492a54a",
     "url": "/static/media/version-2.8b72fee1.png"
-  },
-  {
-    "revision": "fa339b302bb4778a1f1b8ae1987de8a9",
-    "url": "/static/media/version-3.fa339b30.png"
   },
   {
     "revision": "b75c80f1469cea4e71102b97e4c980b0",

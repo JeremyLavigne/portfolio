@@ -5,24 +5,16 @@ import NavTile from './NavTile'
 
 
 // --------------------------------------------------------------------------------------
-// Portfolio slide - Need to work on it
+// Portfolio slide 
 // --------------------------------------------------------------------------------------
 const Portfolio = () => {
 
-    // Projects overviews images
-    const hangmanImage = require('../images/hangman_overview.png')
-    const javaAppImage = require('../images/java-app.png')
-    const otherProjectImage = require('../images/other.png')
-    const v1Image = require('../images/version-1.png')
-    const v2Image = require('../images/version-2.png')
-    const v3Image = require('../images/version-3.png')
-
     // Projects are closed by default, give user some space (except in mobile)
     const [ openedProjects, setOpenedProjects ] = useState([
-        {name: "hangman", open: false},
-        {name: "javaApp", open: false},
-        {name: "versions", open: false},
-        {name: "other", open: false}
+        {name: "frontend", open: false},
+        {name: "backend", open: false},
+        {name: "previous", open: false},
+        {name: "fullstack", open: false}
     ])
 
     return (
@@ -34,11 +26,7 @@ const Portfolio = () => {
                         <div className="tile is-parent">
 
                             <ProjectTile 
-                                title="Hangman, The game" 
-                                overview={hangmanImage}
-                                skills={["React / Redux", "Basic JSON Server"]} 
-                                link="https://arcane-escarpment-51046.herokuapp.com"
-                                color="link" 
+                                title="Front-end" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}
                                 index={0}
@@ -46,14 +34,12 @@ const Portfolio = () => {
 
                         </div>
 
+                        <div className="tile is-1"></div>
+
                         <div className="tile is-parent">
 
                             <ProjectTile 
-                                title="Java App" 
-                                overview={javaAppImage}
-                                skills={["Java, OOP"]} 
-                                link="/documents/java-app.jar"
-                                color="success" 
+                                title="Back-end" 
                                 openedProjects={openedProjects}
                                 setOpenedProjects={setOpenedProjects}
                                 index={1}
@@ -61,65 +47,42 @@ const Portfolio = () => {
 
                         </div>
                     </div>
-                   
-                    <div className="tile is-parent">
 
-                        <ProjectTile 
-                            title="Version 1" 
-                            overview={v1Image}
-                            skills={["March 2020", "Carefree..."]} 
-                            link="https://www.jeremylavigneapply.com/version-1/indexv1.html"
-                            color="warning" 
-                            openedProjects={openedProjects}
-                            setOpenedProjects={setOpenedProjects}
-                            index={2}
-                        />
+                    <div className="tile">
+                        <div className="tile is-parent">
 
-                        <ProjectTile 
-                            title="Version 2" 
-                            overview={v2Image}
-                            skills={["May 2020", "Full of Hope!"]} 
-                            link="https://www.jeremylavigneapply.com"
-                            color="warning" 
-                            openedProjects={openedProjects}
-                            setOpenedProjects={setOpenedProjects}
-                            index={2}
-                        />
+                            <ProjectTile 
+                                title="Portfolios" 
+                                openedProjects={openedProjects}
+                                setOpenedProjects={setOpenedProjects}
+                                index={2}
+                            />
 
-                        <ProjectTile 
-                            title="Version 3"
-                            overview={v3Image} 
-                            skills={["October 2020", "Confident :)"]} 
-                            link="#"
-                            color="warning" 
-                            openedProjects={openedProjects}
-                            setOpenedProjects={setOpenedProjects}
-                            index={2}
-                        />
+                        </div>
 
+                        <div className="tile is-1"></div>
+
+                        <div className="tile is-parent">
+
+                            <ProjectTile 
+                                title="Full stack" 
+                                openedProjects={openedProjects}
+                                setOpenedProjects={setOpenedProjects}
+                                index={3}
+                            />
+
+                        </div>
                     </div>
+                   
                 </div>
 
-                <div className="tile is-vertical is-4">
+                <div className="tile is-vertical is-1"></div>
+
+                <div className="tile is-vertical is-3">
 
                     <div className="tile is-parent" style={{maxHeight: '200px'}}>
 
                         <NavTile openedProjects={openedProjects} setOpenedProjects={setOpenedProjects}/>
-
-                    </div>
-
-                    <div className="tile is-parent">
-
-                        <ProjectTile 
-                            title="Some project" 
-                            overview={otherProjectImage}
-                            skills={["Some skill", "Some other skill"]} 
-                            link=""
-                            color="danger" 
-                            openedProjects={openedProjects}
-                            setOpenedProjects={setOpenedProjects}
-                            index={3}
-                        />
 
                     </div>
 

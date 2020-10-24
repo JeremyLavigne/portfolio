@@ -1,34 +1,33 @@
 {
   "files": {
-    "main.js": "/static/js/main.67aa9c4d.chunk.js",
-    "main.js.map": "/static/js/main.67aa9c4d.chunk.js.map",
+    "main.js": "/static/js/main.be81a053.chunk.js",
+    "main.js.map": "/static/js/main.be81a053.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19ccc7f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.19ccc7f6.js.map",
     "static/css/2.692107d7.chunk.css": "/static/css/2.692107d7.chunk.css",
-    "static/js/2.1c45392d.chunk.js": "/static/js/2.1c45392d.chunk.js",
-    "static/js/2.1c45392d.chunk.js.map": "/static/js/2.1c45392d.chunk.js.map",
+    "static/js/2.d8c09287.chunk.js": "/static/js/2.d8c09287.chunk.js",
+    "static/js/2.d8c09287.chunk.js.map": "/static/js/2.d8c09287.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.a66d02b7119b02a825fb5e8d58659d95.js": "/precache-manifest.a66d02b7119b02a825fb5e8d58659d95.js",
+    "precache-manifest.0edc34ac9c73f243c630916dafa9d173.js": "/precache-manifest.0edc34ac9c73f243c630916dafa9d173.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.692107d7.chunk.css.map": "/static/css/2.692107d7.chunk.css.map",
-    "static/js/2.1c45392d.chunk.js.LICENSE.txt": "/static/js/2.1c45392d.chunk.js.LICENSE.txt",
+    "static/js/2.d8c09287.chunk.js.LICENSE.txt": "/static/js/2.d8c09287.chunk.js.LICENSE.txt",
     "static/media/bibliotek.jpg": "/static/media/bibliotek.3219d45e.jpg",
     "static/media/all.css": "/static/media/fa-solid-900.ee09ad75.woff",
     "static/media/hangman_overview.png": "/static/media/hangman_overview.3a508399.png",
-    "static/media/java-app.png": "/static/media/java-app.d0e6def6.png",
-    "static/media/other.png": "/static/media/other.1a9c6d2b.png",
+    "static/media/java-app.png": "/static/media/java-app.5626dcae.png",
     "static/media/photo.png": "/static/media/photo.6ec44562.png",
     "static/media/stockholm-night.jpg": "/static/media/stockholm-night.3e481acc.jpg",
     "static/media/sunset.jpg": "/static/media/sunset.21565da7.jpg",
+    "static/media/tiny-games.png": "/static/media/tiny-games.e1c98e9f.png",
     "static/media/version-1.png": "/static/media/version-1.8ed2ace7.png",
     "static/media/version-2.png": "/static/media/version-2.8b72fee1.png",
-    "static/media/version-3.png": "/static/media/version-3.fa339b30.png",
     "static/media/water.jpg": "/static/media/water.b75c80f1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.19ccc7f6.js",
     "static/css/2.692107d7.chunk.css",
-    "static/js/2.1c45392d.chunk.js",
-    "static/js/main.67aa9c4d.chunk.js"
+    "static/js/2.d8c09287.chunk.js",
+    "static/js/main.be81a053.chunk.js"
   ]
 }

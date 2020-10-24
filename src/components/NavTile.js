@@ -20,11 +20,11 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
     return (
         <article className="tile is-child px-3 py-3" style={isMobile ? {display: 'none'} : {display: 'block'}}>
             <div className="columns">
-                <div className="column is-8">
+                <div className="column is-12">
                     <div className="columns">
                         <div className="column is-half">
                             <button 
-                                className="button is-link is-light"
+                                className="button is-link"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(0)}
                             >
@@ -33,7 +33,7 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                         </div>
                         <div className="column is-half">
                             <button 
-                                className="button is-success is-light"
+                                className="button is-link"
                                 style={{width: '100%'}}
                                 onClick={() => handleClickOpenProject(1)}
                             >
@@ -41,28 +41,25 @@ const NavTile = ({openedProjects, setOpenedProjects}) => {
                             </button>
                         </div>
                     </div>
-                    <div className="content">
-                        <button 
-                            className="button is-warning is-light"
-                            style={{width: '100%'}}
-                            onClick={() => handleClickOpenProject(2)}
-                        >
-                            <i className="fas fa-step-forward"></i>
-                            <i className="fas fa-step-forward"></i>
-                            <i className="fas fa-step-forward"></i>
-                        </button>
-                    </div>
-                </div>
-                <div className="column is-4 is-flex" style={{flexDirection: 'column', justifyContent: 'space-between'}}>
-                    <div></div>
-                    <div >
-                        <button 
-                            className="button is-danger is-light"
-                            style={{width: '100%'}}
-                            onClick={() => handleClickOpenProject(3)}
-                        >
-                            <i className="fas fa-question"></i>
-                        </button>
+                    <div className="columns">
+                        <div className="column is-half">
+                            <button 
+                                className="button is-link"
+                                style={{width: '100%'}}
+                                onClick={() => handleClickOpenProject(2)}
+                            >
+                                <i className="fas fa-step-backward"></i>
+                            </button>
+                        </div>
+                        <div className="column is-half">
+                            <button 
+                                className="button is-link"
+                                style={{width: '100%'}}
+                                onClick={() => handleClickOpenProject(3)}
+                            >
+                                <i className="fab fa-node-js"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

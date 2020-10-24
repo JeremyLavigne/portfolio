@@ -1,10 +1,16 @@
 import React from 'react'
 import useWindowWidth from '../utils/windowDimensions'
 
+import FrontEndProject from './projects/FrontEndProject'
+import BackEndProject from './projects/BackEndProject'
+import FullStackProject from './projects/FullStackProject'
+import PreviousPortfolios from './projects/PreviousPortfolios'
+
+
 // --------------------------------------------------------------------------------------
 // Project tile - overview, name and skills
 // --------------------------------------------------------------------------------------
-const ProjectTile = ({overview, title, skills, link, color, openedProjects, setOpenedProjects, index}) => {
+const ProjectTile = ({title, openedProjects, setOpenedProjects, index}) => {
 
     const isMobile = useWindowWidth();
 
@@ -23,45 +29,19 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
 
     return (
         <article 
-            className={`tile is-child notification is-${color} is-light px-2 py-2`}
+            className={`tile is-child notification is-link`}
             style={isOpen ? {visibility: 'visible'} : {visibility: 'hidden'}}
         >
+
+            <p className="subtitle is-italic is-strong has-text-centered">{title}</p>
+
+            {
+                title === "Front-end" ? <FrontEndProject /> :
+                title === "Back-end" ? <BackEndProject /> :
+                title === "Portfolios" ? <PreviousPortfolios /> :
+                <FullStackProject /> 
+            }
     
-            <p className="subtitle is-italic is-strong">{title}</p>
-
-            <figure className="image is-256x256">
-                {title === "Java App" ? 
-                    <a href={process.env.PUBLIC_URL + link} download >
-                        <img 
-                            src={overview} 
-                            alt={title} 
-                            style={overviewStyle}
-                        />
-                        Download me
-                    </a> : title === "Some project" ?
-                    <img 
-                        src={overview} 
-                        alt={title} 
-                        style={overviewStyle}
-                    />
-                    :
-                    <a href={link} target="_blank" rel="noopener noreferrer"  >
-                        <img 
-                            src={overview} 
-                            alt={title} 
-                            style={overviewStyle}
-                        />
-                        Visit me
-                    </a>
-
-                }
-            </figure>
-
-            <ul className="content my-1 px-2">
-                {
-                    skills.map(skill => <li key={skill}> -- {skill}</li>)
-                }
-            </ul>
             { !isMobile &&
             <button 
                 className="delete" 
@@ -71,14 +51,6 @@ const ProjectTile = ({overview, title, skills, link, color, openedProjects, setO
             }
         </article>
     )
-}
-
-// Style for projects overview
-const overviewStyle = { 
-    cursor: 'pointer', 
-    borderWidth: '2px', 
-    borderColor: 'black', 
-    borderStyle: 'solid' 
 }
 
 export default ProjectTile
