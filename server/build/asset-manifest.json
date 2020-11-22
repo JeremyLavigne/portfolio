@@ -1,33 +1,34 @@
 {
   "files": {
-    "main.js": "/static/js/main.be81a053.chunk.js",
-    "main.js.map": "/static/js/main.be81a053.chunk.js.map",
+    "main.js": "/static/js/main.199c68c8.chunk.js",
+    "main.js.map": "/static/js/main.199c68c8.chunk.js.map",
     "runtime-main.js": "/static/js/runtime-main.19ccc7f6.js",
     "runtime-main.js.map": "/static/js/runtime-main.19ccc7f6.js.map",
     "static/css/2.692107d7.chunk.css": "/static/css/2.692107d7.chunk.css",
-    "static/js/2.d8c09287.chunk.js": "/static/js/2.d8c09287.chunk.js",
-    "static/js/2.d8c09287.chunk.js.map": "/static/js/2.d8c09287.chunk.js.map",
+    "static/js/2.62a1be6f.chunk.js": "/static/js/2.62a1be6f.chunk.js",
+    "static/js/2.62a1be6f.chunk.js.map": "/static/js/2.62a1be6f.chunk.js.map",
     "index.html": "/index.html",
-    "precache-manifest.0edc34ac9c73f243c630916dafa9d173.js": "/precache-manifest.0edc34ac9c73f243c630916dafa9d173.js",
+    "precache-manifest.0d0ab0f12dc617eecbd6166d87d708ac.js": "/precache-manifest.0d0ab0f12dc617eecbd6166d87d708ac.js",
     "service-worker.js": "/service-worker.js",
     "static/css/2.692107d7.chunk.css.map": "/static/css/2.692107d7.chunk.css.map",
-    "static/js/2.d8c09287.chunk.js.LICENSE.txt": "/static/js/2.d8c09287.chunk.js.LICENSE.txt",
+    "static/js/2.62a1be6f.chunk.js.LICENSE.txt": "/static/js/2.62a1be6f.chunk.js.LICENSE.txt",
     "static/media/bibliotek.jpg": "/static/media/bibliotek.3219d45e.jpg",
+    "static/media/cakery_overview.png": "/static/media/cakery_overview.a31e3757.png",
+    "static/media/community_overview.png": "/static/media/community_overview.1539b9d9.png",
     "static/media/all.css": "/static/media/fa-solid-900.ee09ad75.woff",
-    "static/media/hangman_overview.png": "/static/media/hangman_overview.3a508399.png",
-    "static/media/java-app.png": "/static/media/java-app.5626dcae.png",
+    "static/media/hangman_overview.png": "/static/media/hangman_overview.7271fbb7.png",
     "static/media/photo.png": "/static/media/photo.6ec44562.png",
     "static/media/stockholm-night.jpg": "/static/media/stockholm-night.3e481acc.jpg",
     "static/media/sunset.jpg": "/static/media/sunset.21565da7.jpg",
-    "static/media/tiny-games.png": "/static/media/tiny-games.e1c98e9f.png",
-    "static/media/version-1.png": "/static/media/version-1.8ed2ace7.png",
+    "static/media/tiny-games.png": "/static/media/tiny-games.d135d776.png",
+    "static/media/trackingApp_overview.png": "/static/media/trackingApp_overview.ca4e4920.png",
     "static/media/version-2.png": "/static/media/version-2.8b72fee1.png",
     "static/media/water.jpg": "/static/media/water.b75c80f1.jpg"
   },
   "entrypoints": [
     "static/js/runtime-main.19ccc7f6.js",
     "static/css/2.692107d7.chunk.css",
-    "static/js/2.d8c09287.chunk.js",
-    "static/js/main.be81a053.chunk.js"
+    "static/js/2.62a1be6f.chunk.js",
+    "static/js/main.199c68c8.chunk.js"
   ]
 }
