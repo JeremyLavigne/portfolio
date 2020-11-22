@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
 
-// node server/server.js
 import Project from './Project'
 import hangmanImage from '../images/hangman_overview.png'
 import tinyGamesImage from '../images/tiny-games.png'
