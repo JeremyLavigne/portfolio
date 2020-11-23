@@ -1,12 +1,12 @@
 import React, {useState} from 'react'
 
 import Project from './Project'
-import hangmanImage from '../images/hangman_overview.png'
-import tinyGamesImage from '../images/tiny-games.png'
-import trackingAppImage from '../images/trackingApp_overview.png'
-import cakeryImage from '../images/cakery_overview.png';
-import previousImage from '../images/version-2.png';
-import communityImage from '../images/community_overview.png'
+import hangmanImage from '../../images/hangman_overview.png'
+import tinyGamesImage from '../../images/tiny-games.png'
+import trackingAppImage from '../../images/trackingApp_overview.png'
+import cakeryImage from '../../images/cakery_overview.png';
+import previousImage from '../../images/version-2.png';
+import communityImage from '../../images/community_overview.png'
 
 import ProjectModal from './ProjectModal'
 
@@ -83,7 +83,10 @@ const Portfolio = () => {
 
 
     return (
-        <div className="box columns is-multiline" style={boxStyle}>
+        <div 
+            className="box columns is-multiline boxStyle"
+            style={{backgroundImage: "url(" + require('../../images/bibliotek.jpg') + ")"}}
+        >
             {
                 projects.map((project) => 
                     <Project 
@@ -100,20 +103,6 @@ const Portfolio = () => {
             />
         </div>
     )
-}
-
-// Content is not supposed to get out of the slide
-// Body height : 90vh - slide height : 85vh
-const boxStyle = {
-    minHeight: '85vh',
-    marginTop: '2.5vh',
-    maxHeight: '85vh',
-    overflow: 'auto',
-    backgroundImage: "url(" + require('../images/bibliotek.jpg') + ")",
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    borderRadius: '20px'
 }
 
 

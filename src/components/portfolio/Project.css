@@ -1,0 +1,14 @@
+.projectFigure {
+    max-width: 80%;
+    margin-left: 10%;
+    position: relative;
+    box-shadow: -3px -3px grey;
+}
+
+.plusButton {
+    max-width: 30px;
+    position: absolute !important; /* Doesn't effect here, don't know why ? */
+    bottom: 10px;
+    left: 5px;
+    cursor: pointer;
+}

@@ -6,7 +6,7 @@ import React from 'react'
 // --------------------------------------------------------------------------------------
 const Profile = ({ profileIsOpen, setProfileIsOpen }) => {
 
-    const photo = require('../images/photo.png') 
+    const photo = require('../../images/photo.png') 
 
 
     return (

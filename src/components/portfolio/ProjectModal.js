@@ -23,7 +23,7 @@ const ProjectModal = ({ projectIsOpen, setProjectIsOpen, currentProject, setCurr
 
                     <header className="modal-card-head">
                         <p className="container has-text-centered has-text-weight-bold">
-                        {currentProject.title}
+                            {currentProject.title}
                         </p>
                     </header>
 

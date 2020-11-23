@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import './ChatBot.css';
 
 import BotLine from './BotLine'
 
@@ -19,7 +20,7 @@ const ChatBot = () => {
 
     // Several step/ group inside 'interview', see utils/chatContent.js
     const [activeGroup, setActiveGroup] = useState(0)
-    const [chatContent, setChatContent] = useState(require('../utils/chatContent').default)
+    const [chatContent, setChatContent] = useState(require('../../utils/chatContent').default)
 
     // All chatBot lines
     const [lines, setLines] = useState([
@@ -84,15 +85,15 @@ const ChatBot = () => {
 
     // --------------------------------------------------------------------------------------
     return (
-        <div className="box" style={boxStyle}>
-            <div className="columns" style={blocStyle}>
+        <div className="box boxStyle" style={{backgroundImage: "url(" + require('../../images/sunset.jpg') + ")"}}>
+            <div className="columns blocStyle">
 
                 {chatIsOpen ?
 
                     <div className="column is-half-tablet is-full-mobile">
-                        <div className="card" style={{ borderRadius: '15px' }}>
+                        <div className="card radius15">
 
-                            <header className="card-header has-background-link-light pt-2" style={{ borderRadius: '15px 15px 0 0' }}>
+                            <header className="card-header has-background-link-light pt-2 topRadius15" >
 
                                 <span className="icon is-large mr-2">
                                     <i className="fas fa-robot fa-lg"></i>
@@ -104,7 +105,7 @@ const ChatBot = () => {
 
                             </header>
 
-                            <div id="chat-content" className="card-content" style={messagesStyle}>
+                            <div id="chat-content" className="card-content messagesStyle">
                                 {
                                     lines.map(line =>
                                         <BotLine
@@ -122,7 +123,7 @@ const ChatBot = () => {
 
                             <footer className="card-footer has-background-link-light py-3" style={{ borderRadius: '0 0 15px 15px' }}>
 
-                                <div className="is-flex" style={footerStyle}>
+                                <div className="is-flex footerStyle">
                                     <div className="control">
                                         <input
                                             className="input is-rounded is-small mx-3"
@@ -167,46 +168,5 @@ const ChatBot = () => {
         </div>
     )
 }
-
-
-// Content is not supposed to get out of the slide
-// Body height : 90vh - slide height : 85vh
-// BoxStyle : style for the whole slide
-const boxStyle = {
-    minHeight: '85vh',
-    marginTop: '2.5vh',
-    maxHeight: '85vh',
-    overflow: 'auto',
-    backgroundImage: "url(" + require('../images/sunset.jpg') + ")",
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    borderRadius: '20px'
-}
-
-// blocStyle : style for the Chatbot container - put the chat in center
-const blocStyle = {
-    minHeight: '85vh',
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-    borderRadius: '15px'
-}
-
-// messageStyle : style for messages flow
-// messages should be scroll, not the rest of the chat/ page
-const messagesStyle = {
-    maxHeight: '50vh', // Only 50vh to avoid issues in tiny screens
-    overflow: 'scroll'
-}
-
-const footerStyle = {
-    width: '100%',
-    justifyContent: 'space-between',
-    borderRadius: "0 0 15px 15px"
-}
-
-// Could use more (all) bulma classes to replace style
-// box in a box in a box ? Change style names
 
 export default ChatBot

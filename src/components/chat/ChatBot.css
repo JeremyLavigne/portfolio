@@ -1,0 +1,25 @@
+/* blocStyle : style for the Chatbot container - put the chat in center */
+.blocStyle {
+    min-height: 85vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 15px;
+}
+
+/* messageStyle : style for messages flow
+// messages should be scroll, not the rest of the chat/ page */
+.messagesStyle {
+    max-height: 50vh; /* Only 50vh to avoid issues in tiny screens */
+    overflow: scroll;
+}
+
+.footerStyle {
+    width: 100%;
+    justify-content: space-between;
+    border-radius: 0 0 15px 15px;
+}
+
+.radius15 { border-radius: 15px }
+
+.topRadius15 { border-radius: 15px 15px 0 0 }

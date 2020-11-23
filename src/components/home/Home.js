@@ -8,14 +8,14 @@ import Profile from './Profile'
 // --------------------------------------------------------------------------------------
 const Home = ({profileIsOpen, setProfileIsOpen}) => {
 
-    const github = require('../images/github-image.png')
-    const photo = require('../images/photo.png')
-    const linkedIn = require('../images/linkedin.png')
+    const github = require('../../images/github-image.png')
+    const photo = require('../../images/photo.png')
+    const linkedIn = require('../../images/linkedin.png')
 
 
     // --------------------------------------------------------------------------------------
     return (
-        <div className="box" style={boxStyle}>
+        <div className="box boxStyle" style={{backgroundImage: "url(" + require('../../images/stockholm-night.jpg') + ")"}}>
             <div className="container">
 
                 <div className="columns is-vcentered">
@@ -53,22 +53,5 @@ const Home = ({profileIsOpen, setProfileIsOpen}) => {
         </div>
     )
   }
-  
-  
-  // Content is not supposed to get out of the slide
-  // Body height : 90vh - slide height : 85vh
-  const boxStyle = {
-    minHeight: '85vh', 
-    marginTop: '2.5vh',
-    maxHeight: '85vh',
-    overflow: 'auto',
-    backgroundImage: "url(" + require('../images/stockholm-night.jpg') + ")",
-    backgroundPosition: 'center',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    borderRadius: '20px'
-  }
 
-// Almost same style is repeated 3 times, should put it higher
-
-  export default Home
+export default Home

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
+import './App.css'
 
 import Slide from './components/Slide'
-
+// node server/server.js
 
 // --------------------------------------------------------------------------------------
 // Main component - Slides and buttons for changing active Slide
@@ -22,7 +23,7 @@ const App = () => {
   return (
     <div>
 
-      <div className="has-background-black is-centered is-flex" style={bottomStyle}>
+      <div id="navbar" className="has-background-black is-centered is-flex">
 
         <div className="buttons has-addons" >
           <button
@@ -42,14 +43,13 @@ const App = () => {
         </div>
       </div>
 
-      <div style={bodyStyle}>
+      <div className="bodyStyle">
 
         <Slide number={1} activeSlide={activeSlide} profileIsOpen={profileIsOpen} setProfileIsOpen={setProfileIsOpen} />
 
-        <div className="container has-text-centered" style={!(activeSlide === 1) ? leftbuttonStyle : { display: 'none' }}>
+        <div className={`container has-text-centered ${activeSlide !== 1 ? " leftbuttonStyle" : " displayNone"}`} >
           <span
-            className="icon"
-            style={{ cursor: 'pointer' }}
+            className="icon pointer"
             onClick={() => setActiveSlide(activeSlide - 1)}
           >
             <i className="fas fa-chevron-circle-left fa-2x"></i> :
@@ -58,10 +58,9 @@ const App = () => {
 
         <Slide number={2} activeSlide={activeSlide} />
 
-        <div className="container has-text-centered" style={!(activeSlide === 3) ? rightbuttonStyle : { display: 'none' }}>
+        <div className={`container has-text-centered ${activeSlide !== 3 ? " rightbuttonStyle" : " displayNone"}`} >
           <span
-            className="icon"
-            style={{ cursor: 'pointer' }}
+            className="icon pointer"
             onClick={() => setActiveSlide(activeSlide + 1)}
           >
             <i className="fas fa-chevron-circle-right fa-2x"></i> :
@@ -74,45 +73,6 @@ const App = () => {
 
     </div>
   )
-}
-
-// BodyStyle is the user screen, behind slides. Take Always 90% of height
-const bodyStyle = {
-  marginTop: '10vh',
-  height: '90vh',
-  minHeight: '90vh',
-  backgroundImage: "url(" + require('./images/water.jpg') + ")",
-  backgroundPosition: 'center',
-  backgroundSize: 'cover',
-  backgroundRepeat: 'no-repeat',
-}
-
-// Like a footer/Navbar, stay always in bottom and takes the remaining 10%
-const bottomStyle = {
-  width: '100%',
-  height: '10vh',
-  minHeight: '50px',
-  position: 'fixed',
-  top: 0,
-  justifyContent: 'center', // For buttons position
-  alignItems: 'center',
-  zIndex: 3 // Prevent some overflow
-}
-
-// Left and right Arrow to change slide
-const leftbuttonStyle = {
-  width: '7.5%',
-  position: 'absolute',
-  left: '0%',
-  zIndex: 1, // Go under slide when changing
-  top: '55%' // Put it in the 'middle' of screen height
-}
-const rightbuttonStyle = {
-  width: '7.5%',
-  position: 'absolute',
-  left: '92.5%',
-  zIndex: 1, // Go under slide when changing
-  top: '55%' // Put it in the 'middle' of screen height
 }
 
 export default App

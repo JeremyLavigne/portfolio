@@ -1,9 +1,9 @@
 import React from 'react';
 
 // Components
-import Portfolio from './Portfolio'
-import Home from './Home'
-import ChatBot from './ChatBot';
+import Portfolio from './portfolio/Portfolio'
+import Home from './home/Home'
+import ChatBot from './chat/ChatBot';
 
 
 // --------------------------------------------------------------------------------------
